@@ -51,7 +51,7 @@ exports.handler = async (event, context) => {
         toDoArray.push(newToDo);
 
         return {
-            statusCode: 200,
+            statusCode: 201,
             headers: {
                 "Content-type": "application/json",
             },
@@ -103,5 +103,5 @@ exports.handler = async (event, context) => {
                 }),
         }
     }
-    return 'Ooops';
+    return 'Ooops!';
 }
