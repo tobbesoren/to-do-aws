@@ -44,6 +44,7 @@ exports.handler = async (event, context) => {
 
         var newToDo = JSON.parse(event.body);
        
+        // I knew this 'context' was good for something
         const id = context.awsRequestId;
        
         newToDo.id = id;
