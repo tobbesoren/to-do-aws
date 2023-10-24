@@ -34,7 +34,7 @@ exports.handler = async (event, context) => {
     if (method === 'GET' && path === '/to_do') {
         return {
             statusCode: 200,
-            // Is 'Content-type' and 'application/json' pre defined, I wonder?
+            // Is 'Content-type' and 'application/json' pre defined, I wonder? Does it work without this? Why don't I try it myself?
             headers: {
                 "Content-type": "application/json",
             },
@@ -86,7 +86,10 @@ exports.handler = async (event, context) => {
             return obj.id === updateDoneID
           })
 
-        toDoArray[itemIndex].done = !toDoArray[itemIndex].done;
+        //toggles done
+        if (itemIndex != -1) {
+            toDoArray[itemIndex].done = !toDoArray[itemIndex].done;
+        }
 
         return {
             statusCode: 200,
